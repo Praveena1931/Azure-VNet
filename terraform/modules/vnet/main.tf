@@ -16,15 +16,19 @@ resource "azurerm_virtual_network" "vnet" {
   address_space       = var.vnet_address_space
   dns_servers         = var.vnet_dns_servers
 
-  subnet {
-    name             = var.subnet1_name
-    address_prefixes = var.subnet1_prefixes
-  }
-
-  subnet {
-    name             = var.subnet2_name
-    address_prefixes = var.subnet2_prefixes
-    security_group   = azurerm_network_security_group.nsg.id
-  }
-
 }
+
+resource "azurerm_subnet" "subnet1" {
+  name                 = var.subnet1_name
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefixes       = var.subnet1_prefix
+}
+
+resource "azurerm_subnet" "subnet2" {
+  name                 = var.subnet2_name
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefixes     = var.subnet2_prefix
+}
+

@@ -33,7 +33,7 @@ variable "subnet1_name" {
   type        = string
 }
 
-variable "subnet1_prefixes" {
+variable "subnet1_prefix" {
   description = "Address prefixes for the first subnet"
   type        = list(string)
 }
@@ -43,7 +43,7 @@ variable "subnet2_name" {
   type        = string
 }
 
-variable "subnet2_prefixes" {
+variable "subnet2_prefix" {
   description = "Address prefixes for the second subnet"
   type        = list(string)
 }

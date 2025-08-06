@@ -11,8 +11,8 @@ module "virtualnetwork" {
   vnet_address_space = var.vnet_address_space
   vnet_dns_servers = var.vnet_dns_servers
   subnet1_name = var.subnet1_name
-  subnet1_prefixes = var.subnet1_prefixes
+  subnet1_prefix = var.subnet1_prefix
   subnet2_name = var.subnet2_name
-  subnet2_prefixes = var.subnet2_prefixes
+  subnet2_prefix = var.subnet2_prefix
 
 }
