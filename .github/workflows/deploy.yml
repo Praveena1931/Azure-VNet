@@ -1,4 +1,4 @@
-name: Terraform Domain Name System
+name: Terraform Virtual Network
 
 on:
   push:
